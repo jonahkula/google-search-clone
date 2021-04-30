@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Google Search Clone</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
     </div>
   );
