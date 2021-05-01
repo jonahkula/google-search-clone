@@ -3,7 +3,21 @@
 @tailwind utilities;
 
 @layer components {
+  /* link buttons on home page header */
   .link {
     @apply hover:underline cursor-pointer;
+  }
+
+  /* buttons for google search and lucky search on home page */
+  .btn {
+    @apply bg-[#f8f9fa] p-3 rounded-md ring-gray-200 text-sm text-gray-800 
+    transition duration-200 transform hover:ring-1 focus:outline-none 
+    active:ring-gray-300 hover:shadow-md;
+  }
+
+  /* tailwind css for input field on home page */
+  .input {
+    @apply flex w-full mt-5 transition duration-200 transform hover:shadow-lg focus-within:shadow-lg 
+    max-w-md rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl;
   }
 }
