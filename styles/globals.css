@@ -3,21 +3,46 @@
 @tailwind utilities;
 
 @layer components {
-  /* link buttons on home page header */
+  /* HOME PAGE */
+
+  /* link buttons on header */
   .link {
     @apply hover:underline cursor-pointer;
   }
 
-  /* buttons for google search and lucky search on home page */
+  /* buttons for google search and lucky search */
   .btn {
     @apply bg-[#f8f9fa] p-3 rounded-md ring-gray-200 text-sm text-gray-800 
     transition duration-200 transform hover:ring-1 focus:outline-none 
     active:ring-gray-300 hover:shadow-md;
   }
 
-  /* tailwind css for input field on home page */
-  .input {
+  /* tailwind css for input field */
+  .home-input {
     @apply flex w-full mt-5 transition duration-200 transform hover:shadow-lg focus-within:shadow-lg 
     max-w-md rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl;
+  }
+
+  /* SEARCH PAGE */
+
+  /* input field */
+  .search-input {
+    @apply flex flex-grow px-6 py-3 ml-10 mr-5 border border-gray-200 rounded-full shadow-lg max-w-3xl items-center;
+  }
+
+  /* x icon in search field */
+  .x-icon {
+    @apply h-7 sm:mr-3 text-gray-500 cursor-pointer transition duration-100 transform hover:scale-125;
+  }
+
+  /* mic icon in search field */
+  .mic-icon {
+    @apply h-6 mr-3 hidden sm:inline-flex text-blue-500 border-l-2 pl-4 border-gray-300 
+    cursor-pointer hover:text-blue-800;
+  }
+
+  /* search icon in search field */
+  .search-icon {
+    @apply h-6 text-blue-500 hidden sm:inline-flex cursor-pointer hover:text-blue-800;
   }
 }

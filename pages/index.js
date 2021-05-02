@@ -3,8 +3,26 @@ import Image from "next/image";
 import Avatar from "../components/Avatar";
 import { ViewGridIcon, MicrophoneIcon } from "@heroicons/react/solid";
 import { SearchIcon } from "@heroicons/react/outline";
+import { useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const searchInputRef = useRef(null);
+
+  // on search
+  const search = (e) => {
+    // avoid refresh and get current input
+    e.preventDefault();
+    const term = searchInputRef.current.value;
+
+    // return if blank search
+    if (!term) return;
+
+    // redirect to search
+    router.push(`/search?term=${term}`);
+  };
+
   return (
     <div>
       <Head>
@@ -29,18 +47,24 @@ export default function Home() {
       {/* body */}
       <form className="flex flex-col items-center mt-40 flex-grow">
         <Image src="/logo.png" height={125} width={375} />
-        <div className="input">
+        <div className="home-input">
           <SearchIcon className="h-5 mr-3 text-gray-500" />
-          <input type="text" className="focus:outline-none flex-grow" />
+          <input
+            ref={searchInputRef}
+            type="text"
+            className="focus:outline-none flex-grow"
+          />
           <MicrophoneIcon className="h-5 mr-3 text-gray-500 hover:text-gray-700 cursor-pointer" />
         </div>
         <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8 sm:space-y-0 sm:flex-row sm:space-x-4">
-          <button className="btn">Google Search</button>
-          <button className="btn">I'm Feeling Lucky</button>
+          <button onClick={search} className="btn">
+            Google Search
+          </button>
+          <button onClick={search} className="btn">
+            I'm Feeling Lucky
+          </button>
         </div>
       </form>
-
-      {/* footer */}
     </div>
   );
 }
