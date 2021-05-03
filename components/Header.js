@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useRef } from "react";
 import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
 import Avatar from "./Avatar";
+import HeaderOptions from "./HeaderOptions";
 
 function Header() {
   const router = useRouter();
@@ -36,19 +37,23 @@ function Header() {
             ref={searchInputRef}
             type="text"
             className="flex-grow w-full focus:outline-none"
+            defaultValue={router.query.term}
           />
           <XIcon
             className="x-icon"
             onClick={() => (searchInputRef.current.value = "")}
           />
           <MicrophoneIcon className="mic-icon" />
-          <SearchIcon className="search-icon" />
+          <SearchIcon onClick={search} className="search-icon" />
           <button hidden type="submit" onClick={search}>
             Search
           </button>
         </form>
         <Avatar className="ml-auto" url="/profile.png" />
       </div>
+
+      {/* header options */}
+      <HeaderOptions />
     </header>
   );
 }

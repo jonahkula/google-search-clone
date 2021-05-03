@@ -23,7 +23,7 @@
     max-w-md rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl;
   }
 
-  /* SEARCH PAGE */
+  /* SEARCH PAGE - HEADER */
 
   /* input field */
   .search-input {
@@ -44,5 +44,17 @@
   /* search icon in search field */
   .search-icon {
     @apply h-6 text-blue-500 hidden sm:inline-flex cursor-pointer hover:text-blue-800;
+  }
+
+  /* header options */
+  .header-options {
+    @apply flex w-full text-gray-700 justify-evenly text-sm lg:text-base lg:justify-start lg:space-x-36 
+    lg:pl-52 border-b;
+  }
+
+  /* header option */
+  .header-option {
+    @apply flex items-center space-x-1 border-b-4 border-transparent hover:text-blue-500 cursor-pointer 
+    hover:border-blue-500 pb-3;
   }
 }
