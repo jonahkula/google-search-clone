@@ -28,7 +28,7 @@ export default Search;
 
 // server side rendering of search results on new search
 export async function getServerSideProps(context) {
-  // have dummy data be true when testing to avoid exhausting google's api quota of 150 searches per day
+  // have dummy data be true when testing to avoid exhausting google's api quota of a limited number of searches per day
   const useDummyData = false;
 
   // startIndex here for pagination, works when dummy data is false
